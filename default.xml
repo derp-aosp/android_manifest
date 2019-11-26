@@ -791,5 +791,6 @@
 
    <!-- derp stuff -->
    <include name="snippets/los.xml" />
+   <include name="snippets/derp.xml" />
 
 </manifest>

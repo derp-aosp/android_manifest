@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+           fetch=".." />
+
+  <remote  name="derp"
+           fetch="https://github.com/derp-aosp"
+           revision="q" />
+
+  <!-- General -->
+  <project path="art" name="art" remote="derp" />
+  <project path="bionic" name="bionic" remote="derp" />
+  <project path="bootable/recovery" name="bootable_recovery" remote="derp" />
+  <project path="development" name="development" remote="derp" />
+  <project path="platform_testing" name="platform_testing" remote="derp" />
+
+  <!-- Build -->
+  <project path="build/blueprint" name="build_blueprint" remote="derp" />
+  <project path="build/make" name="build" remote="derp">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="build_soong" remote="derp">
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <!-- Frameworks -->
+  <project path="frameworks/av" name="frameworks_av" remote="derp" />
+  <project path="frameworks/base" name="frameworks_base" remote="derp" />
+  <project path="frameworks/native" name="frameworks_native" remote="derp" />
+  <project path="frameworks/opt/net/ims" name="frameworks_opt_net_ims" remote="derp" />
+  <project path="frameworks/opt/net/wifi" name="frameworks_opt_net_wifi" remote="derp" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="derp" />
+
+  <!-- Hardware -->
+  <project path="hardware/interfaces" name="hardware_interfaces" remote="derp" />
+  <project path="hardware/libhardware" name="hardware_libhardware" remote="derp" />
+  <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="derp" />
+
+  <!-- Packages -->
+  <project path="packages/apps/Bluetooth" name="packages_apps_Bluetooth" remote="derp" />
+  <project path="packages/apps/Camera2" name="packages_apps_Camera2" remote="derp" />
+  <project path="packages/apps/Dialer" name="packages_apps_Dialer" remote="derp" />
+  <project path="packages/apps/DocumentsUI" name="packages_apps_DocumentsUI" remote="derp" />
+  <project path="packages/apps/Messaging" name="packages_apps_Messaging" remote="derp" />
+  <project path="packages/apps/Nfc" name="packages_apps_Nfc" remote="derp" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="derp" />
+  <project path="packages/providers/DownloadProvider" name="packages_providers_DownloadProvider" remote="derp" />
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="derp" />
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="derp" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="derp" />
+
+  <!-- Prebuilts -->
+  <project path="prebuilts/clang/host/linux-x86" name="prebuilts_clang_host_linux-x86" remote="derp" clone-depth="1" />
+  <project path="prebuilts/tools-extras" name="prebuilts_tools-extras" remote="derp" />
+
+  <!-- System -->
+  <project path="system/bt" name="system_bt" remote="derp" />
+  <project path="system/core" name="system_core" remote="derp" />
+  <project path="system/extras" name="system_extras" remote="derp" />
+  <project path="system/netd" name="system_netd" remote="derp" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="derp" />
+  <project path="system/update_engine" name="system_update_engine" remote="derp" />
+  <project path="system/vold" name="system_vold" remote="derp" />
+
+  <!-- Vendor -->
+  <project path="vendor/qcom/opensource/power" name="vendor_qcom_opensource_power" remote="derp" />
+
+</manifest>
